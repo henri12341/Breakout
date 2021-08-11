@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/goal.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 352.387, 39.4973 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="paddle" parent="." instance=ExtResource( 1 )]
+position = Vector2( 295.691, 548.649 )
+
+[node name="ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( 290.033, 432.683 )
+linear_damp = 0.0
+
+[node name="Node" type="Node" parent="."]
+
+[node name="KinematicBody2D15" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 500.806, 278.597 )
+
+[node name="KinematicBody2D14" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 516.52, 188.8 )
+
+[node name="KinematicBody2D13" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 505.296, 107.983 )
+
+[node name="KinematicBody2D12" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 413.254, 280.842 )
+
+[node name="KinematicBody2D11" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 419.989, 188.8 )
+
+[node name="KinematicBody2D10" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 422.233, 110.228 )
+
+[node name="KinematicBody2D9" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 323.457, 289.821 )
+
+[node name="KinematicBody2D8" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 323.457, 197.78 )
+
+[node name="KinematicBody2D7" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 327.947, 112.472 )
+
+[node name="KinematicBody2D6" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 226.925, 287.576 )
+
+[node name="KinematicBody2D5" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 226.925, 197.78 )
+
+[node name="KinematicBody2D4" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 229.17, 110.228 )
+
+[node name="KinematicBody2D3" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 128.148, 285.332 )
+
+[node name="KinematicBody2D2" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 128.148, 193.29 )
+
+[node name="KinematicBody2D" parent="Node" instance=ExtResource( 4 )]
+position = Vector2( 125.903, 107.983 )
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 2.15826, 378.424 )
+scale = Vector2( 1, 20 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 345.632, -3.21335 )
+scale = Vector2( 10, 1 )
+
+[node name="Wall2" parent="Walls/Wall3" instance=ExtResource( 3 )]
+position = Vector2( 24.9187, 392.862 )
+scale = Vector2( 0.1, 20 )
+
+[node name="DeathZone" type="StaticBody2D" parent="." groups=[
+"DeathZone",
+]]
+position = Vector2( 244.425, 667.758 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2( 52.9167, -40.3175 )
+shape = SubResource( 1 )
