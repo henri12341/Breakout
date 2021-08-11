@@ -15,9 +15,6 @@ func _process(delta):
 	
 
 
-
-
-
 func _on_ball_body_shape_entered(body_id, body, body_shape, local_shape):
 	print(body.name)
 	if (body.is_in_group("paddle")):
